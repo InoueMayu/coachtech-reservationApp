@@ -1,0 +1,52 @@
+.flex {
+    display: flex;
+}
+
+.reservation {
+    width: 50%;
+}
+
+table {
+    width: 80%;
+    border: 1px solid black;
+    background: blue;
+    color: white;
+    margin-bottom: 50px;
+}
+
+th {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.reserve-icon:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f017";
+    margin: 5px;
+}
+
+.delete-icon {
+    padding-left: 100px;
+}
+
+.table-menu {
+    width: 40%;
+    text-align: center;
+}
+
+.table-content {
+    width: 50%;
+}
+
+td {
+    padding: 10px 10px;
+}
+
+.favorite {
+    width: 50%;
+    margin-left: 50px;
+}
+
+.card-size {
+    width: 80%;
+}
