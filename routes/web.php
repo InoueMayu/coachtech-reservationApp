@@ -18,7 +18,6 @@ use App\Http\Controllers\ReservationController;
 
 Route::get('/', [StoreController::class, 'index'])->name('stores.index');
 Route::get('/detail/{store_id}', [StoreController::class, 'show'])->name('stores.show');
-Route::get('/search', [StoreController::class, 'search'])->name('stores.search');
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

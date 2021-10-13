@@ -1,15 +1,45 @@
+/* ヘッダー */
+.title {
+    font-weight: bold;
+    font-size: 30px;
+    color: blue;
+}
+
+.navbar-toggler-icon {
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* トップページ */
+
+.store-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* マイページ */
 .flex {
     display: flex;
+}
+
+h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.user-name {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 50px;
 }
 
 .reservation {
     width: 50%;
 }
 
-table {
+.mypage-table {
     width: 80%;
-    border: 1px solid black;
-    background: blue;
+    background: #3366FF;
     color: white;
     margin-bottom: 50px;
 }
@@ -32,13 +62,11 @@ th {
 .table-menu {
     width: 40%;
     text-align: center;
+    padding: 10px 10px;
 }
 
 .table-content {
     width: 50%;
-}
-
-td {
     padding: 10px 10px;
 }
 
@@ -49,4 +77,95 @@ td {
 
 .card-size {
     width: 80%;
+}
+
+
+/* ログイン,会員登録ページ */
+
+.card-header {
+    background: #3366FF;
+    color: white;
+    font-size: 20px;
+}
+
+.login-card {
+    width: 35%;
+}
+
+.email-input::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0e0";
+    font-size: 1.5em;
+}
+
+.email-input {
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.email-input input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin-left: 5px;
+}
+
+.password-input::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f13e";
+    font-size: 1.5em;
+}
+
+.password-input {
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.password-input input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin-left: 5px;
+}
+
+.login-btn {
+    background: #3366FF;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+
+.user-input::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f007";
+    font-size: 1.5em;
+}
+
+.user-input {
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.user-input input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin-left: 5px;
+}
+
+.password-confirm-input::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f058";
+    font-size: 1.5em;
+}
+
+.password-confirm-input {
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.password-confirm-input input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin-left: 5px;
 }

@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -79,9 +79,9 @@
             </div> --}}
         {{-- </nav> --}}
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top">
+        <nav class="navbar navbar-expand-lg bg-transparent sticky-top">
             <!-- タイトル -->
-            <a class="navbar-brand" href="{{route('stores.index')}}">Rese</a>
+            <a class="navbar-brand title" href="{{route('stores.index')}}">Rese</a>
             <!-- ハンバーガーメニュー -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>

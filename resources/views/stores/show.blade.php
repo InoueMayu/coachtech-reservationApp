@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container d-flex">
-    <div class="" style="width: 40%">
+    <div style="width: 40%">
         <h4 class="">{{$store->name}}</h4>
-        <img class="" src="{{ $store->image }}" style="width: 100%">
+        <img src="{{ $store->image }}" style="width: 100%">
         <div class="">
             <p class="mt-3">#{{$store->area}} #{{$store->genre}}</p>
             <p>{{$store->description}}</p>
@@ -39,9 +39,10 @@
       @guest
       <div class="card mx-auto mt-5" style="width: 500px">
             <div class="card-body">
-            <h5 class="card-title text-center">予約をご希望の場合はユーザー登録をお願いします。</h5>
+            <h5 class="card-title text-center">予約をご希望の場合はユーザー登録または<br>ログインをお願いします。</h5>
                 <div class="text-center">
                     <a href="{{route('register')}}" class="btn btn-primary">ユーザー登録へ</a>
+                    <a href="{{ route('login') }}" class="btn btn-primary">ログインへ</a>
                 </div>
 
             </div>
@@ -50,6 +51,5 @@
     </div>
 
 </div>
-
 
 @endsection

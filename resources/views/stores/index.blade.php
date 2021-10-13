@@ -22,11 +22,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top">
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top">
         <!-- タイトル -->
-        <a class="navbar-brand" href="{{route('stores.index')}}">Rese</a>
+        <a class="navbar-brand title" href="{{route('stores.index')}}">Rese</a>
         <!-- ハンバーガーメニュー -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler hamberger" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- ナビゲーションメニュー -->
@@ -61,21 +61,32 @@
           </ul>
 
           {{-- 検索バー --}}
-          <form class="d-flex ml-auto">
-                {{-- <select>
-                    <option value="">All genre</option>
-                    @foreach($stores->unique('genre') as $store)
-                        <option value="{{$store->genre}}">{{$store->genre}}</option>
-                    @endforeach
+          <form class="d-flex ml-auto" method="get" action="{{route('stores.index')}}">
+            @csrf
+                <select name="genre" id="genre">
+                    <option value="All" name="genre" id="genre">All genre</option>
+                    {{-- @foreach($data->unique('genre') as $store)
+                        <option value="{{$store->genre}}" name="genre" id="genre">{{$store->genre}}</option>
+                    @endforeach --}}
+                    <option value="焼肉" name="genre">焼肉</option>
+                    <option value="イタリアン" name="genre">イタリアン</option>
+                    <option value="寿司" name="genre">寿司</option>
+                    <option value="居酒屋" name="genre">居酒屋</option>
+                    <option value="ラーメン" name="genre">ラーメン</option>
                 </select>
-                <select>
-                    <option value="">All area</option>
-                    @foreach($stores->unique('area') as $store)
-                        <option value="{{$store->area}}">{{$store->area}}</option>
-                    @endforeach
-                </select> --}}
+
+                <select name="area" id="area">
+                    <option name="area" value="All" id="area">All area</option>
+                    {{-- @foreach($data->unique('area') as $store)
+                        <option name="area" value="{{$store->area}}" id="area">{{$store->area}}</option>
+                    @endforeach --}}
+                    <option value="福岡県" name="area">福岡県</option>
+                    <option value="大阪府" name="area">大阪府</option>
+                    <option value="東京都" name="area">東京都</option>
+                </select>
 
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name" id="name">
+
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
 
@@ -84,40 +95,41 @@
 
     <main class="py-4">
         @yield('content')
-
         <div class="container">
             <div class="row">
-                @foreach ($stores as $store)
-                <div class="col-lg-3 mb-3">
-                    <div class="card" style="width: 17rem;">
-                        <img class="card-img-top" src="{{ $store->image }}">
-                        <div class="card-body">
-                            <h4 class="card-title">{{$store->name}}</h4>
-                            <p class="card-text">#{{$store->area}} #{{$store->genre}}</p>
+                @foreach ($data as $store)
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="card" style="width: 17rem;">
+                            <img class="card-img-top" src="{{ $store->image }}">
+                            <div class="card-body">
+                                <h4 class="card-title store-name">{{$store->name}}</h4>
+                                <p class="card-text">#{{$store->area}} #{{$store->genre}}</p>
 
-                            <div class="d-flex justify-content-between">
-                                <a href="{{ route('stores.show',$store->id) }}" class="btn btn-primary">詳しく見る</a>
+                                <div class="d-flex justify-content-between">
+                                    <a href="{{ route('stores.show',$store->id) }}" class="btn btn-primary">詳しく見る</a>
 
-                                @if($store->favorites()->where('user_id', Auth::id())->exists())
-                                    <form action="{{ route('unfavorite', $store )}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="submit" value="&#xf057" class="fas btn fa-lg">
-                                        <input type="hidden" name="store_id" value="{{$store->id}}">
-                                    </form>
-                                @else
-                                    <form action="{{ route('favorite', $store )}}" method="POST">
-                                        @csrf
-                                        <input type="submit" value="&#xf004" class="fas btn fa-lg">
-                                        <input type="hidden" name="store_id" value="{{$store->id}}">
-                                    </form>
-                                @endif
+                                    @if($store->favorites()->where('user_id', Auth::id())->exists())
+                                        <form action="{{ route('unfavorite', $store )}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" value="&#xf057" class="fas btn fa-lg">
+                                            <input type="hidden" name="store_id" value="{{$store->id}}">
+                                        </form>
+                                    @else
+                                        <form action="{{ route('favorite', $store )}}" method="POST">
+                                            @csrf
+                                            <input type="submit" value="&#xf004" class="fas btn fa-lg">
+                                            <input type="hidden" name="store_id" value="{{$store->id}}">
+                                        </form>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
+            {{ $data->appends(request()->input())->render('pagination::bootstrap-4') }}
+        </div>
         </div>
     </main>
 

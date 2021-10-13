@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        {{-- <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -70,6 +70,52 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div> --}}
+
+        <div class="card login-card">
+            <div class="card-header">
+              Registration
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="user-input">
+                        <input id="name" type="text" placeholder="Username" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="email-input">
+                        <input id="email" type="email"  placeholder="Email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="password-input">
+                        <input id="password" type="password" placeholder="Password" @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="password-confirm-input">
+                        <input id="password-confirm" type="password" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary btn-sm login-btn">登録</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
