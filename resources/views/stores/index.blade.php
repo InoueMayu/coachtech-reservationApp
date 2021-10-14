@@ -99,10 +99,10 @@
             <div class="row">
                 @foreach ($data as $store)
                     <div class="col-lg-3 col-md-6 mb-3">
-                        <div class="card" style="width: 17rem;">
+                        <div class="card index-card" style="width: 17rem;">
                             <img class="card-img-top" src="{{ $store->image }}">
                             <div class="card-body">
-                                <h4 class="card-title store-name">{{$store->name}}</h4>
+                                <h4 class="card-title index-store-name">{{$store->name}}</h4>
                                 <p class="card-text">#{{$store->area}} #{{$store->genre}}</p>
 
                                 <div class="d-flex justify-content-between">

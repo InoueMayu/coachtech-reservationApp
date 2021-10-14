@@ -37,8 +37,8 @@
                         <td class="table-content">{{$reservation->starts_at}}</td>
                     </tr>
                     <tr>
-                        <td class="table-menu">number</td>
-                        <td class="table-content">{{$reservation->number_of_guests}}</td>
+                        <td class="last-table-menu">number</td>
+                        <td class="last-table-content">{{$reservation->number_of_guests}}</td>
                     </tr>
                 </table>
             @empty
@@ -52,7 +52,7 @@
             <div class="row">
             @forelse ($favorites as $favorite)
                 <div class="mb-3 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card card-size">
+                    <div class="card card-size favorite-card">
                         <img class="card-img-top" src="{{ $favorite->store->image }}">
                         <div class="card-body">
                             <h4 class="card-title">{{$favorite->store->name}}</h4>

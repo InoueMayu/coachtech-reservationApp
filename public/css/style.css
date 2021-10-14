@@ -11,9 +11,13 @@
 
 /* トップページ */
 
-.store-name {
+.index-store-name {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.index-card {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -42,6 +46,11 @@ h3 {
     background: #3366FF;
     color: white;
     margin-bottom: 50px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.favorite-card {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 th {
@@ -70,6 +79,17 @@ th {
     padding: 10px 10px;
 }
 
+.last-table-menu {
+    width: 40%;
+    text-align: center;
+    padding: 10px 10px 30px 10px;
+}
+
+.last-table-content {
+    width: 50%;
+    padding: 10px 10px 30px 10px;
+}
+
 .favorite {
     width: 50%;
     margin-left: 50px;
@@ -90,6 +110,7 @@ th {
 
 .login-card {
     width: 35%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .email-input::before {
@@ -168,4 +189,116 @@ th {
     border-bottom: 1px solid black;
     width: 80%;
     margin-left: 5px;
+}
+
+/* thanks,doneページ */
+.thanks {
+    width: 100%;
+}
+
+.thanks-card {
+    width: 50%;
+    height: 300px;
+}
+
+.thanks-body {
+    position: relative;
+}
+
+.thanks-btn {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.thanks-btn h5 {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.thanks-btn a {
+    margin: 0;
+}
+
+/* 店舗詳細ページ */
+
+.show {
+    width: 100%;
+    display: flex;
+}
+
+.show-store {
+    width: 40%;
+}
+
+.show-store img {
+    width: 100%;
+}
+
+.show-reservation {
+    width: 50%;
+}
+
+.show-store-name {
+    font-size: 26px;
+}
+
+.show-reservation-p {
+    background: #3366FF;
+    color: white;
+    border-radius: 5px;
+}
+
+.show-reservation-top {
+    padding: 30px 50px 0px 20px;
+}
+
+.show-reservation-bottom {
+    padding: 0px 50px 0px 20px;
+}
+
+.show-table {
+    margin-top: 20px;
+    margin-bottom: 150px;
+    background: #6699FF;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.show-table-menu {
+    width: 20%;
+    padding: 5px 20px;
+}
+
+.show-table-content {
+    width: 80%;
+    padding: 5px 20px;
+}
+
+.first-menu {
+    width: 20%;
+    padding: 30px 20px 5px 20px;
+}
+
+.first-content {
+    width: 80%;
+    padding: 30px 20px 5px 20px;
+}
+
+.last-menu {
+    width: 20%;
+    padding: 5px 20px 30px 20px;
+}
+
+.last-content {
+    width: 80%;
+    padding: 5px 20px 30px 20px;
+}
+
+.show-btn {
+    background: blue;
+    color: white;
+    height: 50px;
 }
