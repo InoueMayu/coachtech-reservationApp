@@ -1,5 +1,5 @@
 /* ヘッダー */
-.title {
+/* .title {
     font-weight: bold;
     font-size: 30px;
     color: blue;
@@ -7,18 +7,207 @@
 
 .navbar-toggler-icon {
      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+} */
+
+header {
+    display: flex;
+    z-index:  10;
+    margin-bottom: 10px;
+  }
+
+  .header-logo {
+    font-size: 34px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+
+  .header-logo a {
+    color: #3366FF;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .header-logo a {
+      text-decoration: none;
+  }
+
+  .nav{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    background: white;
+    transition: .7s;
+    text-align: center;
+    display: block;
+    z-index: 10;
+  }
+
+  .nav ul{
+    padding-top: 80px;
+  }
+
+  .nav ul li{
+    list-style-type: none;
+    margin-top: 15px;
+    font-size: 26px;
+  }
+
+  .nav ul li a {
+    color: #3366FF;
+  }
+
+  .in{
+    transform: translateX(100%);
+  }
+
+  .menu {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    background: #3366FF;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #ccc;
+    margin-top: 15px;
+    z-index: 11;
+  }
+
+  .menu__line--top,
+  .menu__line--middle,
+  .menu__line--bottom {
+    transition: 0.5s;
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: #444;
+    position: absolute;
+    left: 10px;
+  }
+
+  .menu__line--top {
+    top: 10px;
+    background-color: white;
+    width: 10px;
+  }
+  .menu__line--middle {
+    top: 20px;
+    background-color: white;
+    width: 25px;
+  }
+  .menu__line--bottom {
+    bottom: 10px;
+    background-color: white;
+    width: 5px;
+  }
+
+  .menu.open span:nth-of-type(1) {
+    top: 20px;
+    left: 5px;
+    transform: rotate(45deg);
+    width: 70%;
+  }
+  .menu.open span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .menu.open span:nth-of-type(3) {
+    top: 20px;
+    left: 5px;
+    transform: rotate(-45deg);
+    width: 70%;
+  }
+
+  /* 検索バー */
+
+.search-bar {
+    margin-top: 20px;
 }
+
+.search-bar-form {
+    display: flex;
+    box-shadow: 5px 5px 5px #ccc;
+}
+
+select {
+    border: none;
+    border-right: 0.5px solid #ccc;
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.first-select {
+    border-radius: 5px 0px 0px 5px;
+}
+
+
 
 /* トップページ */
 
-.index-store-name {
-    font-weight: bold;
-    font-size: 20px;
+.index-first {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
 }
 
 .index-card {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+.card {
+    margin-right: 15px;
+    margin-bottom: 10px;
+    width: 20%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #ccc;
+  }
+
+  .card-img {
+    border-radius: 5px 5px 0 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-content {
+    padding: 20px;
+    padding-bottom: 10px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .card-text {
+    color: #333;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .card-flex {
+      display: flex;
+      margin-left: 15px;
+      margin-bottom: 15px;
+      justify-content: space-between;
+  }
+
+  .card-flex a {
+      background: #3366FF;
+      color: white;
+  }
+
 
 
 /* マイページ */
@@ -38,7 +227,9 @@ h3 {
 }
 
 .reservation {
-    width: 50%;
+    width: 40%;
+    margin: 0 auto;
+    margin-left: 100px;
 }
 
 .mypage-table {
@@ -47,10 +238,6 @@ h3 {
     color: white;
     margin-bottom: 50px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-}
-
-.favorite-card {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 th {
@@ -92,13 +279,23 @@ th {
 
 .favorite {
     width: 50%;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 
-.card-size {
-    width: 80%;
+.favorite-flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
+.mypage-card {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 40%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #ccc;
+}
 
 /* ログイン,会員登録ページ */
 
@@ -231,6 +428,7 @@ th {
 
 .show-store {
     width: 40%;
+    margin: 0 auto;
 }
 
 .show-store img {
@@ -238,11 +436,18 @@ th {
 }
 
 .show-reservation {
-    width: 50%;
+    width: 40%;
+    margin: 0 auto;
 }
 
 .show-store-name {
     font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.show-store-name-flex {
+    display: flex;
 }
 
 .show-reservation-p {
@@ -301,4 +506,12 @@ th {
     background: blue;
     color: white;
     height: 50px;
+}
+
+.card-title-sub {
+    font-size: 16px;
+}
+
+.date-input {
+    border-radius: 5px;
 }

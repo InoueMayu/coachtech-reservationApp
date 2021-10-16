@@ -30,4 +30,4 @@ Route::get('/mypage', [App\Http\Controllers\MyPageController::class, 'index'])->
 
 Route::post('store/{id}/favorite', [App\Http\Controllers\FavoriteController::class, 'store'])->name('favorite');
 Route::delete('store/{id}/unfavorite', [App\Http\Controllers\FavoriteController::class, 'destroy'])->name('unfavorite');
-
+Route::delete('store/{id}/subunfavorite', [App\Http\Controllers\FavoriteController::class, 'delete'])->name('subunfavorite');

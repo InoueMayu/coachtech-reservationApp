@@ -12,9 +12,13 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -23,6 +27,7 @@
 <body>
 
     {{-- <div id="app">
+        初期ログインページ
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -79,14 +84,16 @@
             </div> --}}
         {{-- </nav> --}}
 
-        <nav class="navbar navbar-expand-lg bg-transparent sticky-top">
-            <!-- タイトル -->
+
+        {{-- ２ndログインページ --}}
+        {{-- <nav class="navbar navbar-expand-lg bg-transparent sticky-top">
+
             <a class="navbar-brand title" href="{{route('stores.index')}}">Rese</a>
-            <!-- ハンバーガーメニュー -->
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- ナビゲーションメニュー -->
+
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
@@ -117,11 +124,59 @@
                 @endguest
               </ul>
             </div>
-          </nav>
+          </nav> --}}
+
+          {{-- <div class="container"> --}}
+            <header style="margin-left: 80px">
+                <nav class="nav" id="nav">
+                <ul>
+                    <li>
+                        <a class="nav-link" href="{{route('stores.index')}}">Home</a>
+                    </li>
+                    @auth
+                    <li>
+                        <a class="nav-link" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                         Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{route('mypage')}}">Mypage</a>
+                    </li>
+                    @endauth
+                    @guest
+                    <li>
+                        <a class="nav-link" href="{{route('register')}}">Registration</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{route('login')}}">Login</a>
+                    </li>
+                    @endguest
+                </ul>
+                </nav>
+
+                <div class="menu" id="menu">
+                <span class="menu__line--top"></span>
+                <span class="menu__line--middle"></span>
+                <span class="menu__line--bottom"></span>
+                </div>
+
+                <div class="header-logo">
+                    <a class="" href="{{route('stores.index')}}">Rese</a>
+                </div>
+            </header>
+        {{-- </div> --}}
+
         <main class="py-4">
             @yield('content')
         </main>
 
     {{-- </div> --}}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

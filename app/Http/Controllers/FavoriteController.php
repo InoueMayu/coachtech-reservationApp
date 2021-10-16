@@ -27,4 +27,13 @@ class FavoriteController extends Controller
 
         return redirect()->route('stores.index');
     }
+
+    public function delete($id) {
+
+        $store = Store::findOrFail($id);
+
+        $store->favorites()->delete();
+
+        return redirect()->route('mypage');
+    }
 }
