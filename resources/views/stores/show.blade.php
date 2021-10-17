@@ -12,12 +12,10 @@
         </div>
         <img src="{{ $store->image }}">
         <div class="">
-            <p class="mt-3">#{{$store->area}} #{{$store->genre}}</p>
+            <p class="mt-3">#{{$store->area->name}} #{{$store->genre->name}}</p>
             <p>{{$store->description}}</p>
         </div>
     </div>
-
-
     <div class="show-reservation">
         @auth
         <form action="{{ route('reservation.store') }}" method="POST">
@@ -27,9 +25,9 @@
                 <div class="show-reservation-top">
                     <h3>予約</h3>
                     <div class="mb-3">
-                    <input type="date" name="date" v-model="dateSelect" class="date-input">
+                    <input type="date" name="date" v-bind="dateSelect" class="date-input">
                     </div>
-                    <select class="form-select form-control mb-3" aria-label="Default select example" name="starts_at" v-model="timeSelect">
+                    <select class="form-select form-control mb-3" aria-label="Default select example" name="starts_at" v-bind="timeSelect">
                         <option value="17:00" name="starts_at">17:00</option>
                         <option value="17:30" name="starts_at">17:30</option>
                         <option value="18:00" name="starts_at">18:00</option>
@@ -43,7 +41,7 @@
                         <option value="22:00" name="starts_at">22:00</option>
                         <option value="22:30" name="starts_at">22:30</option>
                     </select>
-                    <select class="form-select form-control mb-3" aria-label="Default select example" name="number_of_guests" v-model="numberSelect">
+                    <select class="form-select form-control mb-3" aria-label="Default select example" name="number_of_guests" v-bind="numberSelect">
                         <option value="1" name="number_of_guests">1人</option>
                         <option value="2" name="number_of_guests">2人</option>
                         <option value="3" name="number_of_guests">3人</option>
@@ -77,11 +75,9 @@
                     </table>
                 </div>
                 <button type="submit" class="btn w-100 show-btn">予約する</button>
-
             </div>
         </form>
         @endauth
-
         @guest
         <div class="container">
             <div class="card mt-5" style="width: 100%;">

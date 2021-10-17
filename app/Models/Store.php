@@ -9,7 +9,7 @@ class Store extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'area','genre','description','address','image'
+        'name', 'area_id','genre_id','description','address','image'
     ];
 
     public function reservations() {
@@ -18,6 +18,14 @@ class Store extends Model
 
     public function favorites() {
         return $this->hasMany('App\Models\Favorite');
+    }
+
+    public function area() {
+        return $this->belongsTo('App\Models\Area');
+    }
+
+    public function genre() {
+        return $this->belongsTo('App\Models\Genre');
     }
 }
 

@@ -15,26 +15,31 @@ class StoreController extends Controller
 
         $query = Store::query();
 
+
         if (!empty($name)) {
             $query->where('name', 'LIKE', "%$name%")
                 ->get();
         }
 
         if ($request->has('genre') && $genre != ('All')) {
-            $query->where('genre', $genre)
-            ->get();
+            $query->whereHas('genre', function($query) use($genre){
+                $query->where('name', $genre);
+            })->get();
         }
 
         if ($request->has('area') && $area != ('All')) {
-            $query->where('area', $area)
-            ->get();
+            $query->whereHas('area', function($query) use($area){
+                $query->where('name', $area);
+            })->get();
         }
 
         $data = $query->paginate(20);
 
-        return view('stores.index',[
+        return view('stores.index',
+        [
             'data' => $data,
-        ]);
+        ]
+    );
 
     }
 

@@ -66,17 +66,17 @@
                     <div class="email-input">
                         <input id="email" type="email"  placeholder="Email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
+                        <p class="error">
                             <strong>{{ $message }}</strong>
-                        </span>
+                        </p>
                         @enderror
                     </div>
                     <div class="password-input">
                         <input id="password" type="password" placeholder="Password" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <p class="error">
                                 <strong>{{ $message }}</strong>
-                            </span>
+                            </p>
                         @enderror
                     </div>
                     <div class="text-right">

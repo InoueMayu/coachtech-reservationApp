@@ -388,6 +388,12 @@ th {
     margin-left: 5px;
 }
 
+.error {
+    color: red;
+}
+
+
+
 /* thanks,doneページ */
 .thanks {
     width: 100%;

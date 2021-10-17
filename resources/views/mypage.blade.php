@@ -87,7 +87,7 @@
                             <img class="card-img" src="{{ $favorite->store->image }}">
                             <div class="card-content">
                             <h1 class="card-title">{{$favorite->store->name}}</h1>
-                            <p class="card-text">#{{$favorite->store->area}} #{{$favorite->store->genre}}</p>
+                            <p class="card-text">#{{$favorite->store->area->name}} #{{$favorite->store->genre->name}}</p>
                             </div>
                             <div class="card-flex">
                                 <a href="{{ route('stores.show',$favorite->store->id) }}" class="btn  btn-sm">詳しくみる</a>

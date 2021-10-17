@@ -21,7 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -144,7 +144,7 @@
                         <img class="card-img" src="{{ $store->image }}">
                         <div class="card-content">
                           <h1 class="card-title">{{$store->name}}</h1>
-                          <p class="card-text">#{{$store->area}} #{{$store->genre}}</p>
+                          <p class="card-text">#{{$store->area->name}} #{{$store->genre->name}}</p>
                         </div>
                         <div class="card-flex">
                             <a href="{{ route('stores.show',$store->id) }}" class="btn  btn-sm">詳しくみる</a>

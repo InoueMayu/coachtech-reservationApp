@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(AreaSeeder::class);
+        $this->call(GenreSeeder::class);
         $this->call(StoreSeeder::class);
     }
 }

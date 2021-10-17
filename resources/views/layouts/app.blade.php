@@ -176,7 +176,20 @@
         </main>
 
     {{-- </div> --}}
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+    <script>
+
+        new Vue({
+        el: '#app',
+        data: {
+            dateSelect:'',
+            timeSelect:'',
+            numberSelect:''
+        }
+    })
+
+    </script>
     <script src="{{ asset('js/main.js') }}"></script>
+
 </body>
 </html>

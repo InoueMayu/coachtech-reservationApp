@@ -7,13 +7,11 @@ target.addEventListener('click', () => {
 });
 
 
-let app = new Vue({
-    el: '#app',
-    data: {
-        dateSelect:'',
-        timeSelect: '',
-        numberSelect:'',
-    }
-  })
-
-
+// let app = new Vue({
+//     el: '#app',
+//     data: {
+//         dateSelect:'',
+//         timeSelect:'',
+//         numberSelect:''
+//     }
+//   })
