@@ -9,7 +9,7 @@ class Store extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'area_id','genre_id','description','address','image'
+        'name','area_id','genre_id','description','address','image'
     ];
 
     public function reservations() {
