@@ -24,8 +24,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
+    @if(app('env') == 'production')
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('/css/style.css') }}" rel="stylesheet">
+    @else
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    @endif
 </head>
 
 <body>
@@ -176,6 +181,10 @@
             {{ $data->appends(request()->input())->render('pagination::bootstrap-4') }}
     </main>
 
+    @if(app('env') == 'production')
     <script src="{{ secure_asset('js/main.js') }}"></script>
+    @else
+    <script src="{{ asset('js/main.js') }}"></script>
+    @endif
 </body>
 </html>
