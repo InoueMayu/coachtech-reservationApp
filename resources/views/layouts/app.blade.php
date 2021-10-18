@@ -176,20 +176,23 @@
         </main>
 
     {{-- </div> --}}
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-    <script>
-
-        new Vue({
-        el: '#app',
-        data: {
-            dateSelect:'',
-            timeSelect:'',
-            numberSelect:''
-        }
-    })
-
-    </script>
     <script src="{{ asset('js/main.js') }}"></script>
+
+    {{-- <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+  var $input = $('#input');
+  var $output = $('#output');
+  $input.on('input', function(event) {
+    var value = $input.val();
+    $output.text(value);
+  });
+    });
+});
+    </script> --}}
 
 </body>
 </html>
