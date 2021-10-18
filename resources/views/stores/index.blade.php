@@ -10,7 +10,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    @if(app('env') == 'production')
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    @else
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,8 +24,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -172,6 +176,6 @@
             {{ $data->appends(request()->input())->render('pagination::bootstrap-4') }}
     </main>
 
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ secure_asset('js/main.js') }}"></script>
 </body>
 </html>
