@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Store;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ReservationRequest;
 
 class ReservationController extends Controller
 {
-    public function store(Request $request) {
+    public function store(ReservationRequest $request) {
 
         $reservation = new Reservation();
 
