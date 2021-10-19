@@ -62,3 +62,38 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+最初にロゴ・アイキャッチ画像などを表示
+
+# Rese
+
+架空の飲食店の予約ができるアプリです。
+
+
+## デモ
+
+![デモ](https://image-url.gif)
+
+
+## 使い方
+
+1. Registrationから会員登録をお願いします。
+2. 予約を希望する飲食店の詳細ページに進んでください。
+3. 希望の日付、時間、また人数を指定して予約してください。
+4. 各飲食店のハートマークをクリックするとお気に入りに登録することができます。
+5. 予約の詳細、お気に入り店の一覧はマイページにて確認することができます。
+
+
+## 環境
+
+* Laravel 8
+* mySQL 8.0.26
+
+
+
+## 文責
+
+* https://github.com/im-mayu-desu
+* E-mail()
+
